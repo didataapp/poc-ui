@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,mBAAmB;EACjB,KAAK,ECIa,OAAO",
+"sources": ["../sass/components/_disciplines-header.sass","../sass/ambience/_colors.sass"],
+"names": [],
+"file": "style.css"
+}
