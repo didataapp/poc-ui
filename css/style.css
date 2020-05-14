@@ -85,8 +85,41 @@ html {
       .app-footer > .item:not(.-active):active > svg > * {
         fill: #008888; }
 
-.discipline-list.sass {
+.discipline-list {
   padding-left: calc(8px + 0.025vw);
-  padding-right: calc(8px + 0.025vw); }
+  padding-right: calc(8px + 0.025vw);
+  height: 100px; }
+  .discipline-list > .discipline > .icon {
+    width: 88px;
+    height: 88px;
+    position: relative; }
+    .discipline-list > .discipline > .icon > .chart,
+    .discipline-list > .discipline > .icon > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .discipline-list > .discipline > .icon > img {
+      width: 64px;
+      height: 64px; }
+    .discipline-list > .discipline > .icon > .chart {
+      --size: 88px;
+      --bord: 6px;
+      width: var(--size);
+      height: var(--size);
+      margin: 1em auto;
+      border-radius: 50%;
+      background-image: conic-gradient(#00AA99 var(--progress), rgba(47, 204, 191, 0.24) var(--progress));
+      position: relative; }
+      .discipline-list > .discipline > .icon > .chart::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - ( var(--bord) * 2) );
+        height: calc(100% - ( var(--bord) * 2) );
+        background: white;
+        border-radius: inherit; }
 
 /*# sourceMappingURL=style.css.map */

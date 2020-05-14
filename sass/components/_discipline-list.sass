@@ -1,2 +1,38 @@
-.discipline-list.sass
+.discipline-list
   +container
+  height: 100px
+  +respond-from(m)
+    background-color: red
+
+  > .discipline
+    > .icon
+      width: 88px
+      height: 88px
+      position: relative
+      > .chart,
+      > img
+        +center-align
+
+      > img
+        width: 64px
+        height: 64px
+
+      > .chart
+        --size: 88px
+        --bord: 6px
+        width: var(--size)
+        height: var(--size)
+        margin: 1em auto
+        border-radius: 50%
+        background-image: conic-gradient($color-primary-600 var(--progress), rgba($color-primary-400, 0.24) var(--progress))
+        position: relative
+        &::after
+          content: ""
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          width: calc(100% - ( var(--bord) * 2) )
+          height: calc(100% - ( var(--bord) * 2) )
+          background: white
+          border-radius: inherit
