@@ -100,52 +100,61 @@ html {
   overflow-y: scroll;
   padding-top: 16px;
   padding-bottom: 16px; }
-  .discipline-list > .discipline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 160px;
-    flex-basis: calc( 100% / 2 ); }
-    .discipline-list > .discipline > .name {
-      font-weight: 600;
-      color: #2e2e2e;
-      text-align: center;
-      margin-top: 12px; }
-    .discipline-list > .discipline > .icon {
-      width: 88px;
-      height: 88px;
+
+.discipline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  flex-basis: calc( 100% / 2 ); }
+  @media (min-width: 640px) {
+    .discipline-item {
+      flex-basis: calc( 100% / 3 ); } }
+  @media (min-width: 1024px) {
+    .discipline-item {
+      flex-basis: calc( 100% / 4 ); } }
+  @media (min-width: 1280px) {
+    .discipline-item {
+      flex-basis: calc( 100% / 7 ); } }
+  .discipline-item > .name {
+    font-weight: 600;
+    color: #2e2e2e;
+    text-align: center;
+    margin-top: 12px; }
+  .discipline-item > .icon {
+    width: 88px;
+    height: 88px;
+    position: relative; }
+    .discipline-item > .icon > .chart, .discipline-item > .icon > .image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .discipline-item > .icon > .image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px; }
+    .discipline-item > .icon > .chart {
+      --size: 88px;
+      --bord: 6px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background-image: conic-gradient(#00AA99 var(--progress), rgba(47, 204, 191, 0.24) var(--progress));
       position: relative; }
-      .discipline-list > .discipline > .icon > .chart,
-      .discipline-list > .discipline > .icon > img {
+      .discipline-item > .icon > .chart::after {
+        content: "";
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); }
-      .discipline-list > .discipline > .icon > img {
-        position: absolute;
         top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
-        width: 64px;
-        height: 64px; }
-      .discipline-list > .discipline > .icon > .chart {
-        --size: 88px;
-        --bord: 6px;
-        width: var(--size);
-        height: var(--size);
-        border-radius: 50%;
-        background-image: conic-gradient(#00AA99 var(--progress), rgba(47, 204, 191, 0.24) var(--progress));
-        position: relative; }
-        .discipline-list > .discipline > .icon > .chart::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: calc(100% - ( var(--bord) * 2) );
-          height: calc(100% - ( var(--bord) * 2) );
-          background: white;
-          border-radius: inherit; }
+        width: calc(100% - ( var(--bord) * 2) );
+        height: calc(100% - ( var(--bord) * 2) );
+        background: white;
+        border-radius: inherit; }
 
 /*# sourceMappingURL=style.css.map */
