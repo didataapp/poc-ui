@@ -1,10 +1,26 @@
 .discipline-list
   +container
-  height: 100px
-  +respond-from(m)
-    background-color: red
+  display: flex
+  flex-wrap: wrap
+  position: fixed
+  top: 48px
+  bottom: 48px
+  overflow-y: scroll
+  padding-top: 16px
+  padding-bottom: 16px
 
   > .discipline
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 160px
+    flex-basis: calc( 100% / 2 )
+    > .name
+      font-weight: 600
+      color: $color-neutral-900
+      text-align: center
+      margin-top: 12px
     > .icon
       width: 88px
       height: 88px
@@ -14,6 +30,7 @@
         +center-align
 
       > img
+        +center-align
         width: 64px
         height: 64px
 
@@ -22,7 +39,6 @@
         --bord: 6px
         width: var(--size)
         height: var(--size)
-        margin: 1em auto
         border-radius: 50%
         background-image: conic-gradient($color-primary-600 var(--progress), rgba($color-primary-400, 0.24) var(--progress))
         position: relative
